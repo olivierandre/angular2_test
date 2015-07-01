@@ -1,0 +1,26 @@
+<p *ng-if="teams.length == 0">Il n'y a pas de membre dans l'équipe</p>
+
+<table class="table table-hover" *ng-if="teams.length > 0" [hidden]="!visible">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Nom</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ng-for="#team of teams; #i = index">
+			<td>{{ i + 1 }}</td>
+			<td>{{ team }}</td>
+			<td>
+				<button type="button" class="btn btn-default" aria-label="Left Align" (click)="showName(team)">
+				  	<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				</button>
+			</td>
+		</tr>
+	</tbody>
+
+</table>
+
+<p (click)="click()">{{ title }}</p>
+<content></content>
